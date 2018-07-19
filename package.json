@@ -15,7 +15,8 @@
     "node cache",
     "file cache",
     "json",
-    "json cache"
+    "json cache",
+    "localStorage"
   ],
   "license": "MIT",
   "bugs": {

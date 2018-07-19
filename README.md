@@ -43,6 +43,10 @@ var data = sjc.newObject({a,:'a',b:[1,2,3],c:{c1:10}},'data')
 
 data.b.push(data.c.c1) //auto save data to cache/data.json
 data.c.c1++ //auto save to data cache/data.json
+
+//but
+data.newProto='newProto' //this will do nothing when you add a new proto in object
+data.save() //you must invoke save method to save json data
 ```
 
 ### Web(Vue)
@@ -64,4 +68,8 @@ Vue.prototype.sjc = new SimpleJsonCache(new StorageCache({
 var config = this.sjc.newObject({a:'aaa',b:[1,2,3]},'config') //auto load data from localStorage['jsc_config']
 config.a='sdsasa'  //auto save data to localStorage['jsc_config']
 config.b[1]++  //auto save data to localStorage['jsc_config']
+
+//but
+config.newProto='newProto' //this will do nothing when you add a new proto in object
+config.save() //you must invoke save method to save json data
 ```
