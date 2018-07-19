@@ -1,0 +1,27 @@
+{
+  "name": "simple-json-cache",
+  "version": "1.0.0",
+  "description": "auto save json data to disk/localStorage when object change. it support nodejs and web.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjmmc/simple-json-cache.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "cache",
+    "node cache",
+    "file cache",
+    "json",
+    "json cache"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hjmmc/simple-json-cache/issues"
+  },
+  "homepage": "https://github.com/hjmmc/simple-json-cache#readme",
+  "author": "hjmmc <haojie.liu@outlook.com>",
+  "license": "MIT"
+}
