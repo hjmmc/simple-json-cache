@@ -39,7 +39,7 @@ var sjc = new SimpleJsonCache(new DiskCache({
 })
 
 //auto load data from cache/data.json
-var data = sjc.newObject({a,:'a',b:[1,2,3],c:{c1:10}},'data')
+var data = sjc.newObject({a:'a',b:[1,2,3],c:{c1:10}},'data')
 
 data.b.push(data.c.c1) //auto save data to cache/data.json
 data.c.c1++ //auto save to data cache/data.json

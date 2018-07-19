@@ -1,6 +1,6 @@
 {
   "name": "simple-json-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "auto save json data to disk/localStorage when object change. it support nodejs and web.",
   "repository": {
     "type": "git",
