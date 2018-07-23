@@ -21,6 +21,10 @@ var data = sjc.newObject({
     }
 }, 'data')
 
+var array=sjc.newObject([],'array')
+array.push(1)
+array.push(2)
+
 var step = 1
 
 //对于一开始就存在的属性修改可自动保存

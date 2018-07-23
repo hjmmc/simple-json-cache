@@ -18,7 +18,7 @@ class SimpleJsonCache {
 			}
 		}
 
-		this.saving = false
+		this.saving = {}
 	}
 
 	//obj 顶层属性必须全部定义好，动态添加的属性无法自动保存
@@ -33,15 +33,16 @@ class SimpleJsonCache {
 		//创建监听器
 		ProtoListener.addListener(obj, (newVal, oldVal, pathArray) => {
 			if (this.options.debug) {
-				console.log('[value change]: obj.' + pathArray.join('.'), oldVal.toString() , '==>' , newVal.toString())
+				console.log(pathArray)
+				console.log('[value change]: obj.' + pathArray || '', oldVal || 'undefined', '==>', newVal || 'undefined')
 			}
-			if (this.saving) {
+			if (this.saving[name]) {
 				return
 			}
-			this.saving = true
+			this.saving[name] = true
 			//延时保存，以防止短时间大量更改导致太多保存
 			setTimeout(() => {
-				this.saving = false
+				this.saving[name] = false
 
 				//属性数据变化时保存
 				this.cacheEngine.save(name, obj)
