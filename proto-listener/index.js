@@ -11,15 +11,15 @@ const types = {
 }
 const OAM = ['push', 'pop', 'shift', 'unshift', 'short', 'reverse', 'splice']
 
-var ProtoListener ={
-	addListener(obj, cb) {
+class ProtoListener {
+	constructor(obj, cb) {
 		if (OP.toString.call(obj) !== types.obj && OP.toString.call(obj) !== types.array) {
 			console.log('请传入一个对象或数组');
 			return false;
 		}
 		this._callback = cb;
 		this.observe(obj);
-	},
+	}
 	observe(obj, path) { 
 		if (OP.toString.call(obj) === types.array) {
 			this.overrideArrayProto(obj, path);
@@ -50,7 +50,7 @@ var ProtoListener ={
 				this.observe(obj[key], pathArray)
 			}
 		}, this)
-	},
+	}
 	overrideArrayProto(array, path) {
 		// 保存原始 Array 原型  
 		var originalProto = Array.prototype,

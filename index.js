@@ -31,7 +31,7 @@ class SimpleJsonCache {
 		}
 
 		//创建监听器
-		ProtoListener.addListener(obj, (newVal, oldVal, pathArray) => {
+		new ProtoListener(obj, (newVal, oldVal, pathArray) => {
 			if (this.options.debug) {
 				console.log(pathArray)
 				console.log('[value change]: obj.' + pathArray || '', oldVal || 'undefined', '==>', newVal || 'undefined')
